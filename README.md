@@ -3,6 +3,26 @@
 > **Project Context:** This repository contains the data engineering pipeline from a university robotics project. 
 > **Goal:** Create a 3D volume reconstruction from a 2D ultrasound probe mounted on a robotic arm and meassure distance needle to blood vessel.
 >
+### Experimental Setup
+<img src="images/Experimental%20Setup.png" width="50%" alt="Experimental Setup">
+
+### 3D Reconstruction Result
+The final 3D volume reconstruction showing the needle (yellow) and the vessel (blue) used to measure the distance:
+
+<img src="images/Needle%20(YellowBall)%20and%20Vessel%20(BlueBall)%20-%203D%20Volume%20Final.png" width="50%" alt="3D Volume Result">
+
+
+Initially the idea was to track the needle in realtime which was shown with Circular Hough Transforms
+### 1. Live Needle Tracking
+This recording shows the **Circular Hough Transform** tracking the needle cross section in real-time. The algorithm detects the needle tip as it moves through the phantom.
+
+**[Watch: Live Tracking Demo](https://github.com/user-attachments/assets/5f6eab63-c814-4890-9b2d-d978f0cf3b92)**
+
+### 2. Algorithm Robustness (Visualization)
+A visualization of the parameter tuning. It demonstrates that the Hough Transform is strictly parameterized to detect only the specific diameter of the needle. Smaller circles (e.g., intersection artifacts or noise) are successfully ignored.
+
+**[Watch: Hough Transform Visualization](https://github.com/user-attachments/assets/ccd8009f-fc80-4099-b820-8b7d5e0c194c)**
+
 
 ## Tech Stack
 * **Middleware:** ROS (Robot Operating System)
@@ -34,5 +54,6 @@ The core data product: converting 2D slices into a metric 3D point cloud.
 The pipeline processes raw data stored as synchronized NumPy arrays:
 * `_images.npy`: Array of 2D raw pixel data.
 * `_positions.npy`: Corresponding x, y, z coordinates of the robotic effector.
+
 
 This code is provided "as is" from the research prototype phase. Paths to local datasets (e.g., `D:\data`) are hardcoded and would be parameterized in a production environment
