@@ -6,6 +6,9 @@
 ### Experimental Setup
 <img src="images/Experimental%20Setup.png" width="50%" alt="Experimental Setup">
 
+### Ultrasonic Picture: Needle and Artifacts
+<img src="sample_data/img33.jpg" width="20%" alt="Sample Image">
+
 ### 3D Reconstruction Result
 The final 3D volume reconstruction showing the needle (yellow) and the vessel (blue) used to measure the distance:
 
@@ -13,15 +16,16 @@ The final 3D volume reconstruction showing the needle (yellow) and the vessel (b
 
 
 Initially the idea was to track the needle in realtime which was shown with Circular Hough Transforms
+
 ### 1. Live Needle Tracking
 This recording shows the **Circular Hough Transform** tracking the needle cross section in real-time. The algorithm detects the needle tip as it moves through the phantom.
 
-**[Watch: Live Tracking Demo](https://github.com/user-attachments/assets/5f6eab63-c814-4890-9b2d-d978f0cf3b92)**
+https://github.com/user-attachments/assets/5f6eab63-c814-4890-9b2d-d978f0cf3b92
 
 ### 2. Algorithm Robustness (Visualization)
 A visualization of the parameter tuning. It demonstrates that the Hough Transform is strictly parameterized to detect only the specific diameter of the needle. Smaller circles (e.g., intersection artifacts or noise) are successfully ignored.
 
-**[Watch: Hough Transform Visualization](https://github.com/user-attachments/assets/ccd8009f-fc80-4099-b820-8b7d5e0c194c)**
+https://github.com/user-attachments/assets/ccd8009f-fc80-4099-b820-8b7d5e0c194c
 
 
 ## Tech Stack
@@ -57,3 +61,4 @@ The pipeline processes raw data stored as synchronized NumPy arrays:
 
 
 This code is provided "as is" from the research prototype phase. Paths to local datasets (e.g., `D:\data`) are hardcoded and would be parameterized in a production environment
+
